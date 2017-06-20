@@ -5,6 +5,8 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.integer :price
       t.integer :stock
       t.text :note
+      t.integer :like , null: false, default: 0
+
 
       t.timestamps
     end
