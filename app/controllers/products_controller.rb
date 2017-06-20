@@ -7,6 +7,14 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def count
+    product = Product.find_by(id: params[:id])
+    product.like = product.like + 1
+    product.save
+    @products = Product.all
+    render action: :index
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
