@@ -8,9 +8,12 @@ class ProductsController < ApplicationController
   end
 
   def count
-    product = Product.find_by(id: params[:id])
-    product.like = product.like + 1
-    product.save
+    if Like.where(user_id: current_user.id).where(product_id: params[:id]).empty?
+    	product = Product.find_by(id: params[:id])
+    	product.like = product.like + 1
+    	product.save
+	Like.new(user_id: current_user.id,product_id: params[:id]).save
+    end
     @products = Product.all
     render action: :index
   end

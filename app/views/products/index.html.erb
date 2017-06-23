@@ -28,7 +28,7 @@
 	  <td><%= link_to 'いいね', product, class: 'btn btn-default',method: :post %></td>
           <td><%= link_to '表示', product, class: 'btn btn-default' %></td>
           <td><%= link_to '編集', edit_product_path(product), class: 'btn btn-default' %></td>
-          <td><%= link_to '削除', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+	  <td><%= link_to '削除', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
       <% end %>
     </tbody>
